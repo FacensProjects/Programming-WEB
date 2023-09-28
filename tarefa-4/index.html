@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Brinquedos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            transition: all 0.3s ease;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Loja de Brinquedos</a>
+</nav>
+
+<!-- Tela Detalhe do Produto -->
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <img width="300px" src="https://m.media-amazon.com/images/I/81LeFfH85TL._AC_SL1500_.jpg" class="img-fluid" alt="Produto Batman">
+        </div>
+        <div class="col-md-6">
+            <h2>Super boneco do Batman</h2>
+            <p>Boneco do batman de plastico resistente ao sol, para todas criancas e muito divertido.</p>
+            <h4 class="mb-4">R$ 300,00</h4>
+            <button class="btn btn-success btn-lg">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+    
+    <!-- Tabs for Photos, Videos, and Comments -->
+    <ul class="nav nav-tabs" id="productTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="photos-tab" data-toggle="tab" href="#photos" role="tab">Fotos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab">Vídeo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="comments-tab" data-toggle="tab" href="#comments" role="tab">Comentários</a>
+        </li>
+    </ul>
+    <div class="tab-content mt-4" id="productTabsContent">
+        <!-- Photos Tab -->
+        <div class="tab-pane fade show active" id="photos" role="tabpanel">
+            <div class="d-flex">
+                <div class="mx-2">
+                    <img width="300px" src="https://m.media-amazon.com/images/I/71SJtk5iKxL._AC_SL1500_.jpg" class="d-block w-100 border" alt="Imagem 1 do Produto">
+                </div>
+                <div class="mx-2">
+                    <img width="300px" src="https://m.media-amazon.com/images/I/71nEG4jExUL._AC_SL1500_.jpg" class="d-block w-100 border" alt="Imagem 2 do Produto">
+                </div>
+                <div class="mx-2">
+                    <img width="300px" src="https://m.media-amazon.com/images/I/81bQg9vMDlL._AC_SL1500_.jpg" class="d-block w-100 border" alt="Imagem 3 do Produto">
+                </div>
+            </div>
+        </div>
+             
+        <!-- Videos Tab -->
+        <div class="tab-pane fade" id="videos" role="tabpanel">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jAgBuheswYU?si=yI7xTovpqSGSzJXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <!-- Comments Tab -->
+        <div class="tab-pane fade" id="comments" role="tabpanel">
+            <h5>Deixe seu comentário:</h5>
+            <textarea class="form-control mb-3" rows="3" placeholder="Digite seu comentário aqui..."></textarea>
+            <button class="btn btn-primary">Enviar Comentário</button>
+            <hr>
+            <h5>Comentários:</h5>
+            <!-- Example Comment -->
+            <div class="media mb-3">
+                <img width="64px" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dbf03b98-b39c-4fc4-9dec-828963b6dfd0/deyuamr-79a23ef3-2d30-4c2f-9480-b014ebc77499.png/v1/fit/w_640,h_640,q_70,strp/profile_picture_in_pixelart_64x64_by_suchanames_deyuamr-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQwIiwicGF0aCI6IlwvZlwvZGJmMDNiOTgtYjM5Yy00ZmM0LTlkZWMtODI4OTYzYjZkZmQwXC9kZXl1YW1yLTc5YTIzZWYzLTJkMzAtNGMyZi05NDgwLWIwMTRlYmM3NzQ5OS5wbmciLCJ3aWR0aCI6Ijw9NjQwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.SiXSyOvsF-8Gk-BirhEWFuBddIb5EG9BO-pMT6Zkono" class="mr-3 rounded-circle" alt="...">
+                <div class="media-body">
+                    <h6 class="mt-0">Rafaela Batman</h6>
+                    Adorei esse batman, muito bom.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
