@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercícios JavaScript</title>
+</head>
+<body>
+  <h2>Exercício 1: Soma, Subtração, Divisão e Multiplicação</h2>
+  <button onclick="exercicio1()">Executar</button>
+
+  <h2>Exercício 2: Loop de 10 a 100</h2>
+  <button onclick="exercicio2()">Executar</button>
+
+  <h2>Exercício 3: Tabuada (valor fixo)</h2>
+  <button onclick="exercicio3()">Executar</button>
+
+  <h2>Exercício 4: Tabuada (valor a partir de um campo)</h2>
+  <input type="number" id="numeroInput" placeholder="Insira um número">
+  <button onclick="exercicio4()">Executar</button>
+
+  <h2>Exercício 5: Calculadora</h2>
+  <input type="number" id="num1" placeholder="Número 1">
+  <input type="number" id="num2" placeholder="Número 2">
+  <select id="operacao">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <button onclick="exercicio5()">Calcular</button>
+  <p id="resultado"></p>
+
+  <h2>Exercício 6: Exibir Valores Pares</h2>
+  <button onclick="exercicio6()">Executar</button>
+
+  <h2>Exercício 7: Cálculo do Custo Final do Carro</h2>
+  <input type="number" id="custoFabrica" placeholder="Custo de Fábrica">
+  <input type="number" id="percDistribuidor" placeholder="% Distribuidor">
+  <input type="number" id="percImpostos" placeholder="% Impostos">
+  <button onclick="exercicio7()">Calcular</button>
+  <input type="text" id="valorfinal" placeholder="Valor Final">
+
+  <script>
+    function exercicio1() {
+      var valor1 = 10;
+      var valor2 = 100;
+      var soma = valor1 + valor2;
+      var subtracao = valor1 - valor2;
+      var divisao = valor1 / valor2;
+      var multiplicacao = valor1 * valor2;
+      alert("Soma: " + soma + "\nSubtração: " + subtracao + "\nDivisão: " + divisao + "\nMultiplicação: " + multiplicacao);
+    }
+
+    function exercicio2() {
+      for (var i = 10; i <= 100; i++) {
+        console.log(i);
+      }
+    }
+
+    function exercicio3() {
+      var numero = 5;
+      for (var i = 1; i <= 10; i++) {
+        var resultado = numero * i;
+        console.log(numero + " x " + i + " = " + resultado);
+      }
+    }
+
+    function exercicio4() {
+      var numero = parseInt(document.getElementById("numeroInput").value);
+      for (var i = 1; i <= 10; i++) {
+        var resultado = numero * i;
+        console.log(numero + " x " + i + " = " + resultado);
+      }
+    }
+
+    function exercicio5() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var operacao = document.getElementById("operacao").value;
+      var resultado;
+      switch (operacao) {
+        case "+":
+          resultado = num1 + num2;
+          break;
+        case "-":
+          resultado = num1 - num2;
+          break;
+        case "*":
+          resultado = num1 * num2;
+          break;
+        case "/":
+          resultado = num1 / num2;
+          break;
+        default:
+          resultado = "Operação inválida";
+      }
+      document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    }
+
+    function exercicio6() {
+      var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      for (var i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+          console.log(numeros[i]);
+        }
+      }
+    }
+
+    function exercicio7() {
+      var custoFabrica = parseFloat(document.getElementById("custoFabrica").value);
+      var percDistribuidor = parseFloat(document.getElementById("percDistribuidor").value);
+      var percImpostos = parseFloat(document.getElementById("percImpostos").value);
+      var custoFinal = custoFabrica + (custoFabrica * (percDistribuidor / 100)) + (custoFabrica * (percImpostos / 100));
+      document.getElementById("valorfinal").value = custoFinal;
+    }
+  </script>
+</body>
+</html>
