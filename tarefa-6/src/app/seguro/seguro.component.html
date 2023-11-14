@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Seguro</title>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form #form="ngForm" (ngSubmit)="calcularApolice()">
+            <div class="form-group">
+                <label for="nomeSegurado">Nome do Segurado:</label>
+                <input type="text" id="nomeSegurado" name="nomeSegurado" [(ngModel)]="nomeSegurado" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" class="form-control" [(ngModel)]="sexo" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" [(ngModel)]="idade" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="valorAutomovel">Valor do Automóvel:</label>
+                <input type="number" id="valorAutomovel" name="valorAutomovel" [(ngModel)]="valorAutomovel" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Calcular Apólice</button>
+
+            <div *ngIf="valorApolice > 0" class="mt-3">
+                <h4>Valor da Apólice: {{ valorApolice | currency:'BRL' }}</h4>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
